@@ -295,39 +295,48 @@ setInterval(()=>{
 
 },2500);
 /*=========================================
-        TYPEWRITER EFFECT
+        TYPEWRITER EFFECT (FIXED)
 =========================================*/
 
 const paragraphs = document.querySelectorAll(".message p");
 
-paragraphs.forEach((p, index) => {
+function typeWriter(element, text, speed = 35) {
 
-    const text = p.innerText;
+    element.textContent = "";
 
-    p.innerText = "";
+    let index = 0;
+
+    function type() {
+
+        if (index < text.length) {
+
+            element.textContent += text[index];
+
+            index++;
+
+            setTimeout(type, speed);
+
+        }
+
+    }
+
+    type();
+
+}
+
+paragraphs.forEach((p, i) => {
+
+    const originalText = p.textContent;
+
+    p.textContent = "";
 
     setTimeout(() => {
 
-        let i = 0;
+        typeWriter(p, originalText, 35);
 
-        const typing = setInterval(() => {
-
-            p.innerText += text.charAt(i);
-
-            i++;
-
-            if (i >= text.length) {
-
-                clearInterval(typing);
-
-            }
-
-        }, 30);
-
-    }, index * 2500);
+    }, i * 2200);
 
 });
-
 /*=========================================
         MUSIC CONTROL
 =========================================*/
