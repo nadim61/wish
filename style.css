@@ -1,0 +1,800 @@
+/*==================================================
+        BLACK & GOLD LUXURY BIRTHDAY CARD
+                style.css (PART 1)
+==================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    width:100%;
+    min-height:100vh;
+
+    overflow:hidden;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#050505;
+
+    position:relative;
+
+}
+
+
+/*==============================
+        Animated Background
+===============================*/
+
+body::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    background:
+
+    radial-gradient(circle at top,
+    rgba(255,215,0,.20),
+    transparent 45%),
+
+    radial-gradient(circle at bottom,
+    rgba(255,174,0,.12),
+    transparent 45%),
+
+    linear-gradient(135deg,
+    #000,
+    #111,
+    #000);
+
+    z-index:-5;
+
+}
+
+
+
+/*==============================
+            Container
+===============================*/
+
+.container{
+
+    width:90%;
+    max-width:850px;
+
+    text-align:center;
+
+    padding:50px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,215,0,.25);
+
+    box-shadow:
+
+    0 0 60px rgba(255,215,0,.15),
+
+    0 0 120px rgba(255,215,0,.08);
+
+}
+
+
+
+/*==============================
+            Name
+===============================*/
+
+.name{
+
+    font-family:'Cinzel',serif;
+
+    font-size:38px;
+
+    color:#FFD700;
+
+    letter-spacing:8px;
+
+    text-shadow:
+
+    0 0 10px gold,
+
+    0 0 20px gold,
+
+    0 0 35px gold;
+
+    animation:glow 2s infinite alternate;
+
+}
+
+
+
+/*==============================
+        Happy Birthday
+===============================*/
+
+.title{
+
+    margin-top:25px;
+
+    font-size:68px;
+
+    color:white;
+
+    font-family:'Cinzel',serif;
+
+    text-shadow:
+
+    0 0 15px gold,
+
+    0 0 35px gold;
+
+    animation:titleFloat 4s ease-in-out infinite;
+
+}
+
+
+
+/*==============================
+        Message
+===============================*/
+
+.message{
+
+    margin-top:45px;
+
+    color:#f5f5f5;
+
+    line-height:2;
+
+    font-size:18px;
+
+}
+
+.message p{
+
+    margin-bottom:18px;
+
+}
+
+.message h3{
+
+    margin-top:35px;
+
+    color:#FFD700;
+
+    font-size:28px;
+
+    font-family:'Cinzel',serif;
+
+}
+
+
+
+/*==============================
+            Cake
+===============================*/
+
+.cake{
+
+    margin:55px auto;
+
+    width:240px;
+
+    height:250px;
+
+    position:relative;
+
+}
+/*=====================================
+            CAKE PLATE
+=====================================*/
+
+.plate{
+    position:absolute;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:260px;
+    height:22px;
+    background:linear-gradient(to right,#888,#fff,#888);
+    border-radius:50px;
+    box-shadow:0 0 20px rgba(255,215,0,.4);
+}
+
+/*=====================================
+            CAKE LAYERS
+=====================================*/
+
+.layer{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    border-radius:12px;
+}
+
+.layer1{
+    width:200px;
+    height:70px;
+    bottom:20px;
+    background:linear-gradient(to bottom,#2b2b2b,#111);
+    border:2px solid gold;
+}
+
+.layer2{
+    width:160px;
+    height:60px;
+    bottom:85px;
+    background:linear-gradient(to bottom,#3b3b3b,#191919);
+    border:2px solid gold;
+}
+
+.layer3{
+    width:120px;
+    height:55px;
+    bottom:145px;
+    background:linear-gradient(to bottom,#4a4a4a,#222);
+    border:2px solid gold;
+}
+
+/*=====================================
+              ICING
+=====================================*/
+
+.icing{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    bottom:190px;
+
+    width:130px;
+    height:18px;
+
+    background:gold;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 0 10px gold,
+    0 0 20px gold;
+}
+
+/*=====================================
+            CANDLES
+=====================================*/
+
+.candles{
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    bottom:208px;
+
+    display:flex;
+
+    gap:22px;
+
+}
+
+.candles span{
+
+    width:8px;
+
+    height:35px;
+
+    background:white;
+
+    border-radius:5px;
+
+    position:relative;
+
+}
+
+/*=====================================
+            FIRE
+=====================================*/
+
+.candles span::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-12px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:10px;
+
+    height:14px;
+
+    background:gold;
+
+    border-radius:50% 50% 50% 50%;
+
+    animation:flame .6s infinite alternate;
+
+    box-shadow:
+    0 0 10px gold,
+    0 0 20px orange,
+    0 0 35px gold;
+
+}
+
+/*=====================================
+        FLAME ANIMATION
+=====================================*/
+
+@keyframes flame{
+
+    from{
+
+        transform:translateX(-50%) scale(1);
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:translateX(-50%) scale(.75);
+
+        opacity:.7;
+
+    }
+
+}
+/*======================================
+        FLOATING BALLOONS
+======================================*/
+
+.balloon{
+
+    position:absolute;
+
+    width:80px;
+    height:100px;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+        145deg,
+        #FFD700,
+        #ffb700
+    );
+
+    box-shadow:
+    0 0 20px rgba(255,215,0,.6),
+    inset -8px -8px 15px rgba(0,0,0,.25);
+
+    animation:floatBalloon 10s linear infinite;
+
+    z-index:-1;
+
+}
+
+.balloon::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:100%;
+
+    width:2px;
+    height:120px;
+
+    background:#cfcfcf;
+
+}
+
+.balloon1{
+
+    left:5%;
+    bottom:-120px;
+    animation-delay:0s;
+
+}
+
+.balloon2{
+
+    left:25%;
+    bottom:-140px;
+    animation-delay:2s;
+
+}
+
+.balloon3{
+
+    right:20%;
+    bottom:-100px;
+    animation-delay:4s;
+
+}
+
+.balloon4{
+
+    right:5%;
+    bottom:-160px;
+    animation-delay:6s;
+
+}
+
+
+/*======================================
+              STARS
+======================================*/
+
+.stars{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+}
+
+.stars::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:3px;
+    height:3px;
+
+    background:gold;
+
+    border-radius:50%;
+
+    box-shadow:
+
+    80px 60px gold,
+    180px 100px gold,
+    320px 220px gold,
+    420px 80px gold,
+    580px 160px gold,
+    720px 60px gold,
+    860px 210px gold,
+    1050px 120px gold,
+    1300px 260px gold,
+    1500px 70px gold;
+
+    animation:twinkle 2s infinite alternate;
+
+}
+
+
+/*======================================
+          GOLD GLOW
+======================================*/
+
+.container::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-2px;
+
+    border-radius:25px;
+
+    border:1px solid rgba(255,215,0,.25);
+
+    box-shadow:
+
+    0 0 30px rgba(255,215,0,.15),
+
+    inset 0 0 25px rgba(255,215,0,.08);
+
+    pointer-events:none;
+
+}
+
+
+/*======================================
+        SIMPLE CONFETTI
+======================================*/
+
+.confetti{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+}
+
+.confetti::before{
+
+    content:"✨ ✦ ✨ ✦ ✨ ✦ ✨ ✦";
+
+    position:absolute;
+
+    width:100%;
+
+    top:-50px;
+
+    text-align:center;
+
+    font-size:26px;
+
+    color:gold;
+
+    animation:confettiFall 8s linear infinite;
+
+}
+/*======================================
+            ANIMATIONS
+======================================*/
+
+@keyframes glow{
+
+    from{
+
+        text-shadow:
+        0 0 10px gold,
+        0 0 20px gold;
+
+    }
+
+    to{
+
+        text-shadow:
+        0 0 20px gold,
+        0 0 40px gold,
+        0 0 60px gold;
+
+    }
+
+}
+
+@keyframes titleFloat{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+@keyframes floatBalloon{
+
+    0%{
+
+        transform:translateY(0px);
+
+        opacity:0;
+
+    }
+
+    10%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:translateY(-130vh);
+
+        opacity:0;
+
+    }
+
+}
+
+@keyframes twinkle{
+
+    from{
+
+        opacity:.3;
+
+        transform:scale(.8);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1.3);
+
+    }
+
+}
+
+@keyframes confettiFall{
+
+    0%{
+
+        transform:translateY(-120px);
+
+        opacity:0;
+
+    }
+
+    15%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:translateY(110vh);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/*======================================
+        HOVER EFFECTS
+======================================*/
+
+.container:hover{
+
+    transform:scale(1.01);
+
+    transition:.5s;
+
+    box-shadow:
+
+    0 0 80px rgba(255,215,0,.18),
+
+    0 0 150px rgba(255,215,0,.10);
+
+}
+
+.title:hover{
+
+    color:#FFD700;
+
+    transition:.5s;
+
+}
+
+.name:hover{
+
+    letter-spacing:10px;
+
+    transition:.5s;
+
+}
+
+
+/*======================================
+        RESPONSIVE
+======================================*/
+
+@media(max-width:768px){
+
+.container{
+
+    width:95%;
+
+    padding:25px;
+
+}
+
+.title{
+
+    font-size:42px;
+
+}
+
+.name{
+
+    font-size:26px;
+
+    letter-spacing:4px;
+
+}
+
+.message{
+
+    font-size:16px;
+
+    line-height:1.8;
+
+}
+
+.message h3{
+
+    font-size:22px;
+
+}
+
+.cake{
+
+    transform:scale(.8);
+
+}
+
+.balloon{
+
+    width:55px;
+
+    height:75px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.title{
+
+    font-size:32px;
+
+}
+
+.name{
+
+    font-size:22px;
+
+}
+
+.message{
+
+    font-size:15px;
+
+}
+
+.cake{
+
+    transform:scale(.65);
+
+}
+
+}
+
+
+/*======================================
+            END
+======================================*/
